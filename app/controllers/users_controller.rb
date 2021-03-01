@@ -13,6 +13,12 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        user = User.find(params[:id])
+        user.destroy
+        render json: user
+    end
+
     def profile
         token = request.headers["Authenticate"]
         user = User.find(decode(token)["user_id"])
