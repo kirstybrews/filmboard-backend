@@ -6,7 +6,11 @@ class AuthController < ApplicationController
             payload = {user_id: user.id}
             token = encode(payload)
             new_hash = {}
-            new_hash["user_data"] = user
+            new_hash["user_data"] = user.to_json(:include => {
+                :job_postings => {:include => {
+                    :applications => {:include => [:user]}
+                }}
+            })
             new_hash["token"] = token
             render json: new_hash
         else

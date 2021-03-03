@@ -22,7 +22,11 @@ class UsersController < ApplicationController
     def profile
         token = request.headers["Authenticate"]
         user = User.find(decode(token)["user_id"])
-        render json: user
+        render json: user.to_json(:include => {
+            :job_postings => {:include => {
+                :applications => {:include => [:user]}
+            }}
+        })
     end
 
     private
