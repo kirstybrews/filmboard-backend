@@ -9,7 +9,9 @@ class JobPostingsController < ApplicationController
         job_posting = JobPosting.new(job_posting_params)
         if job_posting.save
             render json: job_posting.to_json({
-                :except => [:updated_at, :created_at]
+                :include => {:applications => {
+                    :include => [:user]
+                }}
               })
         else
             render json: { error_message: "Something went wrong"}
