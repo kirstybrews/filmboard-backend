@@ -15,6 +15,8 @@ class UsersController < ApplicationController
 
     def destroy
         user = User.find(params[:id])
+        JobPosting.where(user_id: user.id).destroy_all
+        Application.where(user_id: user.id).destroy_all
         user.destroy
         render json: user
     end
