@@ -1,6 +1,6 @@
 class JobPostingsController < ApplicationController
     def index
-        render json: JobPosting.all.to_json({
+        render json: JobPosting.all.reverse.to_json({
             :include => {:applications => {
                 :include => [:user]
             }}
