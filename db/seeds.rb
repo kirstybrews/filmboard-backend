@@ -10,14 +10,14 @@ User.destroy_all
 JobPosting.destroy_all
 Application.destroy_all
 
-user1 = User.create(name: "Kirsty", username: "kirstyb", password: "kirstyb")
-user2 = User.create(name: "Briana", username: "brianab", password: "brianab")
-user3 = User.create(name: "Tristan", username: "tristanb", password: "tristanb")
-user4 = User.create(name: "Axel", username: "axela", password: "axela")
+user1 = User.create(name: "Kirsty", username: "kirstyb", password: "K1r5ty:)")
+user2 = User.create(name: "Briana", username: "brianab", password: "Br1ana:)")
+user3 = User.create(name: "Tristan", username: "tristanb", password: "Tr15tan!!")
+user4 = User.create(name: "Axel", username: "axela", password: "Ax3l!!")
 
-job1 = JobPosting.create(user_id: user1.id, role: "Cinematographer", start_date: "3-1-21", length_of_time: "3 months", location: "Austin, TX", project_description: "Must provide own equipment.")
-job2 = JobPosting.create(user_id: user3.id, role: "Editor", start_date: "3-15-21", length_of_time: "2 months", location: "Nacogdoches, TX", project_description: "Creating an epic animated film!")
-job3 = JobPosting.create(user_id: user2.id, role: "Producer", start_date: "4-1-21", length_of_time: "1 year", location: "Austin, TX", project_description: "Need help with planning out my production schedule.")
+job1 = JobPosting.create(user_id: user1.id, role: "Cinematographer", start_date: "March 1, 2021", length_of_time: "3 month(s)", location: "Austin, TX", project_description: "Must provide own equipment.")
+job2 = JobPosting.create(user_id: user3.id, role: "Editor", start_date: "March 15, 2021", length_of_time: "2 month(s)", location: "Nacogdoches, TX", project_description: "Creating an epic animated film!")
+job3 = JobPosting.create(user_id: user2.id, role: "Producer", start_date: "April 1, 2021", length_of_time: "1 year(s)", location: "Austin, TX", project_description: "Need help with planning out my production schedule.")
 
 application1 = Application.create(user_id: user1.id, job_posting_id: job3.id, message: "I'd love to get more practice with producing a film!")
 application2 = Application.create(user_id: user2.id, job_posting_id: job1.id, message: "I'm just getting into photography and would love to practice this skill!")
