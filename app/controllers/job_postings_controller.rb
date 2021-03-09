@@ -23,6 +23,6 @@ class JobPostingsController < ApplicationController
     private
 
     def job_posting_params
-        params.require(:job_posting).permit(:role, :start_date, :length_of_time, :location, :project_description, :user_id)
+        params.require(:job_posting).permit(:role, :start_date, :length_of_time, :location, :project_description, :user_id, :project_title, :project_type, :compensation, :need_gear)
     end
 end
