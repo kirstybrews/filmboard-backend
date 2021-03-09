@@ -20,6 +20,19 @@ class JobPostingsController < ApplicationController
         end
     end
 
+    def update
+        job_posting = JobPosting.find(params[:id])
+        if job_posting.update(job_posting_params)
+            render json: job_posting.to_json({
+                :include => {:applications => {
+                    :include => [:user]
+                }}
+              })
+        else
+            render json: { error_message: "Something went wrong"}
+        end
+    end
+
     private
 
     def job_posting_params
