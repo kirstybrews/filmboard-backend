@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_09_181217) do
+ActiveRecord::Schema.define(version: 2021_03_09_220302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 2021_03_09_181217) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "project_title"
     t.string "project_type"
-    t.string "compensation"
-    t.boolean "need_gear"
-    t.string "status"
+    t.string "compensation", default: "None"
+    t.boolean "need_gear", default: false
+    t.string "status", default: "Accepting Applicants"
   end
 
   create_table "users", force: :cascade do |t|
