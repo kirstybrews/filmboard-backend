@@ -17,7 +17,7 @@ class JobPostingsController < ApplicationController
                 }}
               })
         else
-            render json: { error_message: "Something went wrong"}
+            render json: {errors: job_posting.errors}
         end
     end
 
@@ -30,7 +30,7 @@ class JobPostingsController < ApplicationController
                 }}
               })
         else
-            render json: { error_message: "Something went wrong"}
+            render json: {errors: job_posting.errors}
         end
     end
 
