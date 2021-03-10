@@ -1,6 +1,7 @@
 class JobPostingsController < ApplicationController
     def index
-        render json: JobPosting.all.reverse.to_json({
+        job_postings = JobPosting.where(status: "Accepting Applicants")
+        render json: job_postings.reverse.to_json({
             :include => {:applications => {
                 :include => [:user]
             }}
@@ -36,6 +37,6 @@ class JobPostingsController < ApplicationController
     private
 
     def job_posting_params
-        params.require(:job_posting).permit(:role, :start_date, :length_of_time, :location, :project_description, :user_id, :project_title, :project_type, :compensation, :need_gear)
+        params.require(:job_posting).permit(:role, :start_date, :length_of_time, :location, :project_description, :user_id, :project_title, :project_type, :compensation, :need_gear, :status)
     end
 end
