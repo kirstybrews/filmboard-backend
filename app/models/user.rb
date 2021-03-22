@@ -18,6 +18,8 @@ class User < ApplicationRecord
         on: :create
      
     validates :name, presence: true
+    validates :email, presence: true
+    validates :location, presence: true
     has_many :job_postings
     has_many :applications
 end
