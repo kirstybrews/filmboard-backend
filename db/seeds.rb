@@ -10,10 +10,11 @@ User.destroy_all
 JobPosting.destroy_all
 Application.destroy_all
 
-user1 = User.create(name: "Kirsty", username: "kirstyb", password: "K1r5ty:)")
-user2 = User.create(name: "Briana", username: "brianab", password: "Br1ana:)")
-user3 = User.create(name: "Tristan", username: "tristanb", password: "Tr15tan!!")
-user4 = User.create(name: "Axel", username: "axela", password: "Ax3l!!")
+user1 = User.create(name: "Kirsty", username: "kirstyb", password: "K1r5ty:)", location: "Austin, TX", email: "kirsty@kirsty.com")
+user2 = User.create(name: "Briana", username: "brianab", password: "Br1ana:)", location: "Austin, TX", email: "briana@briana.com")
+user3 = User.create(name: "Tristan", username: "tristanb", password: "Tr15tan!!", location: "Nacogdoches, TX", email: "tristan@tristan.com")
+user4 = User.create(name: "Katia Krupa", username: "kxkrupa", password: "X1h0nP", location: "Austin, TX", email: "katia@katia.com")
+user4 = User.create(name: "Katia Krupa", username: "kxkrupa", password: "AJm1ran!", location: "Austin, TX", email: "katia@katia.com")
 
 job1 = JobPosting.create(user_id: user1.id, role: "Cinematographer", start_date: "March 1, 2021", length_of_time: "3 month(s)", location: "Austin, TX", project_description: "Must provide own equipment.", project_title: "Let Go", project_type: "Short Film")
 job2 = JobPosting.create(user_id: user3.id, role: "Editor", start_date: "March 15, 2021", length_of_time: "2 month(s)", location: "Nacogdoches, TX", project_description: "Creating an epic animated film!", project_title: "Saitama v Superman", project_type: "Feature Length Film")
