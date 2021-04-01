@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::API
 
+    private
+
     def secret_key
         "h3llo"
     end
