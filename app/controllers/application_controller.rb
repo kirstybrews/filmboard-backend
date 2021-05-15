@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
     private
 
     def secret_key
-        "h3llo"
+        ENV["JWT_SECRET"]
     end
 
     def encode(payload)
